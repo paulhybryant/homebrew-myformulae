@@ -10,7 +10,7 @@ class PowerlineShell < Formula
     # For example, in ubuntu, /bin/sh points to /bin/dash. If /bin/sh is not a
     # symlink, /bin/sh does not support pushd / popd either.
     system "pushd #{prefix}; echo $PWD; ./install.py; popd"
-    system "ln -f -s #{prefix}/powerline-shell.py #{HOMEBREW_PREFIX}/bin"
+    system "cd #{HOMEBREW_PREFIX}/bin; ln -f -s ../Cellar/#{name}/#{version}/powerline-shell.py ./"
   end
 
   test do
