@@ -2,14 +2,14 @@ class Vimdoc < Formula
   homepage ""
   url "https://github.com/google/vimdoc.git"
   sha1 ""
-  version "HEAD"
+  version "0.5.1"
 
   depends_on :python3
 
   def install
     system "python3", "setup.py", "config"
     system "python3", "setup.py", "build"
-    system "python3", "setup.py", "install", "--install-scripts=#{HOMEBREW_PREFIX}/bin", "--record=#{HOMEBREW_PREFIX}/log/vimdoc.log"
+    system "python3", "setup.py", "install", "--install-scripts=#{bin}", "--record=#{prefix}/install.log"
   end
 
   # def uninstall
@@ -28,6 +28,6 @@ class Vimdoc < Formula
     #
     # The installed folder is not in the path, so use the entire path to any
     # executables being tested: `system "#{bin}/program", "do", "something"`.
-    system "vimdoc", "-h"
+    system "#{bin}/vimdoc", "--version"
   end
 end
