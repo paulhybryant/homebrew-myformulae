@@ -1,9 +1,7 @@
 class ZshCompletions < Formula
   homepage "https://github.com/paulhybryant/zsh-completions"
-  url "https://github.com/paulhybryant/zsh-completions"
-  sha256 "fe8a23890e6e725c2b7f1b35b9d2ad9158f3bb736a0faf84f67cf34acf448f40"
-
-  head "https://github.com/paulhybryant/zsh-completions.git"
+  url "https://github.com/paulhybryant/zsh-completions.git"
+  version "head"
 
   def install
     (share/"zsh-completions").install Dir["src/_*"]
