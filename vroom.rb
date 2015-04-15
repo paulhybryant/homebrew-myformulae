@@ -1,8 +1,6 @@
 class Vroom < Formula
   homepage ""
-  url "https://github.com/google/vroom.git"
-  sha1 ""
-  version "0.12.0"
+  head "https://github.com/google/vroom.git"
 
   depends_on :python3
 

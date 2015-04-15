@@ -1,8 +1,6 @@
 class Vimdoc < Formula
   homepage ""
-  url "https://github.com/google/vimdoc.git"
-  sha1 ""
-  version "0.5.1"
+  head "https://github.com/google/vimdoc.git"
 
   depends_on :python3
 

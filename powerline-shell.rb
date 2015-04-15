@@ -1,7 +1,6 @@
 class PowerlineShell < Formula
   homepage "https://github.com/paulhybryant/powerline-shell.git"
-  url "https://github.com/paulhybryant/powerline-shell.git"
-  version "head"
+  head "https://github.com/paulhybryant/powerline-shell.git"
 
   def install
     system "./install.py"
