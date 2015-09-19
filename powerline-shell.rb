@@ -2,6 +2,8 @@ class PowerlineShell < Formula
   homepage "https://github.com/paulhybryant/powerline-shell.git"
   head "https://github.com/paulhybryant/powerline-shell.git"
 
+  depends_on "python"
+
   def install
     system "./install.py"
     system "cp -r * #{prefix}/"
