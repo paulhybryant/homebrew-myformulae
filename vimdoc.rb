@@ -12,8 +12,8 @@ class Vimdoc < Formula
 
   # def uninstall
     # system "cat #{HOMEBREW_PREFIX}/log/vimdoc.log"
-    # # system "cat #{HOMEBREW_PREFIX}/log/vimdoc.log | xargs rm -r"
-    # # system "rm -r #{HOMEBREW_PREFIX}/bin/vimdoc"
+    # system "cat #{HOMEBREW_PREFIX}/log/vimdoc.log | xargs rm -r"
+    # system "rm -r #{HOMEBREW_PREFIX}/bin/vimdoc"
   # end
 
   test do

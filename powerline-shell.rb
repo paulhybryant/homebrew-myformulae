@@ -7,8 +7,8 @@ class PowerlineShell < Formula
   def install
     system "./install.py"
     system "cp -r * #{prefix}/"
-    system "mkdir -p #{bin}"
-    system "ln -f -s #{prefix}/powerline-shell.py #{bin}/powerline-shell.py"
+    mkdir_p "#{bin}"
+    ln_sf "#{prefix}/powerline-shell.py", "#{bin}/powerline-shell.py"
   end
 
   test do
