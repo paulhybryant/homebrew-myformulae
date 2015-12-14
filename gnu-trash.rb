@@ -11,7 +11,7 @@ class GnuTrash < Formula
     system "mv trash.1 gtrash.1"
     bin.install "gtrash"
     man1.install "gtrash.1"
-  end
+  end if OS.mac?
 
   test do
     system "#{bin}/gtrash"
