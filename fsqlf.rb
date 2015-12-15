@@ -4,10 +4,16 @@ class Fsqlf < Formula
   patch :DATA
 
   def install
-    system "make", "fsqlf"
-    lib.install "libfsqlf.so"
+    if OS.mac?
+      ENV["LINUXTYPE"]="Darwin"
+      system "make", "fsqlf"
+      lib.install "libfsqlf.dylib"
+    elsif OS.linux?
+      system "make", "fsqlf"
+      lib.install "libfsqlf.so"
+    end
     bin.install "fsqlf"
-  end if OS.linux?
+  end
 
   test do
     system "#{bin}/fsqlf", "--help"
@@ -40,7 +46,7 @@ index b85eae2..c95a8f0 100644
  endif
 
 -ifeq (Darwin, ${_system_type})
-+ifeq (Darwin, `uname`)
++ifeq (Darwin, ${LINUXTYPE})
  	LIBNAME=libfsqlf.dylib
  	LIBFLAGS=-dynamiclib
  else
