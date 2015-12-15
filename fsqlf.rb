@@ -1,11 +1,11 @@
 class Fsqlf < Formula
   homepage "https://github.com/dnsmkl/fsqlf"
-  head "https://github.com/dnsmkl/fsqlf.git"
-  patch :Data
+  head "https://github.com/dnsmkl/fsqlf.git", :checkout => "2d82a4fcaddd4bdc4e2983115e0b0a4f42e1252b"
+  patch :DATA
 
   def install
     system "make", "fsqlf"
-    # prefix.install "fsqlf"
+    lib.install "libfsqlf.so"
     bin.install "fsqlf"
   end if OS.linux?
 
@@ -13,6 +13,7 @@ class Fsqlf < Formula
     system "#{bin}/fsqlf", "--help"
   end
 end
+
 __END__
 diff --git a/makefile b/makefile
 index b85eae2..c95a8f0 100644
