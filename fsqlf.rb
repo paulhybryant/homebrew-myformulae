@@ -1,6 +1,6 @@
 class Fsqlf < Formula
   homepage "https://github.com/dnsmkl/fsqlf"
-  head "https://github.com/dnsmkl/fsqlf.git", :checkout => "2d82a4fcaddd4bdc4e2983115e0b0a4f42e1252b"
+  head "https://github.com/dnsmkl/fsqlf.git", :revision => "2d82a4fcaddd4bdc4e2983115e0b0a4f42e1252b"
   patch :DATA
 
   def install
@@ -12,6 +12,7 @@ class Fsqlf < Formula
       system "make", "fsqlf"
       lib.install "libfsqlf.so"
     end
+    system "patchelf", "--set-rpath", "#{HOMEBREW_PREFIX}/lib", "fsqlf"
     bin.install "fsqlf"
   end
 
