@@ -362,8 +362,4 @@ def main():
 
 
 if __name__ == "__main__":
-    print("""Warning: brew graph is unsupported and will be removed soon.
-You should use `brew deps --tree` instead.
-Please feel free volunteer to support it in a tap.
-    """, file=sys.stderr)
     main()
