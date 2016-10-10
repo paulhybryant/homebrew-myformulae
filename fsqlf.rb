@@ -11,8 +11,8 @@ class Fsqlf < Formula
     elsif OS.linux?
       system "make", "fsqlf"
       lib.install "libfsqlf.so"
+      system "patchelf", "--set-rpath", "#{HOMEBREW_PREFIX}/lib", "fsqlf"
     end
-    system "patchelf", "--set-rpath", "#{HOMEBREW_PREFIX}/lib", "fsqlf"
     bin.install "fsqlf"
   end
 
