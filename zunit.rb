@@ -6,7 +6,9 @@ class Zunit < Formula
   depends_on "color"
 
   def install
+    system "./build.zsh"
     bin.install "zunit"
+    lib.install "zunit.zsh-completion"
   end
 
   test do
