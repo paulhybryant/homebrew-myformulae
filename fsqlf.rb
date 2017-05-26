@@ -3,7 +3,9 @@ class Fsqlf < Formula
   head "https://github.com/dnsmkl/fsqlf.git", :revision => "2d82a4fcaddd4bdc4e2983115e0b0a4f42e1252b"
   patch :DATA
 
-  depends_on "patchelf" => :build
+  if OS.linux?
+    depends_on "patchelf" => :build
+  end
 
   def install
     if OS.mac?
