@@ -2,7 +2,7 @@ class Qfc < Formula
   homepage "https://github.com/pindexis/qfc.git"
   head "https://github.com/pindexis/qfc.git"
 
-  depends_on :python
+  depends_on "python"
 
   def install
     prefix.install Dir["bin"]
