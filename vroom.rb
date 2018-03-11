@@ -2,7 +2,7 @@ class Vroom < Formula
   homepage ""
   head "https://github.com/google/vroom.git"
 
-  depends_on :python3
+  depends_on "python3"
 
   def install
     system "python3", "setup.py", "build"

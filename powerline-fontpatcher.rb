@@ -2,7 +2,7 @@ class PowerlineFontpatcher < Formula
   homepage ""
   head "https://github.com/Lokaltog/powerline-fontpatcher.git", :branch => "develop"
 
-  depends_on :python
+  depends_on "python"
 
   def install
     system "python", "setup.py", "install", "--install-scripts=#{bin}", "--record=#{prefix}/install.log"

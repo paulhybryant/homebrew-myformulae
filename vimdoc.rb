@@ -2,7 +2,7 @@ class Vimdoc < Formula
   homepage ""
   head "https://github.com/google/vimdoc.git"
 
-  depends_on :python3
+  depends_on "python3"
 
   def install
     system "python3", "setup.py", "config"
