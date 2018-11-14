@@ -7,5 +7,12 @@ class Bat < Formula
 
   def install
     system "sudo dpkg -i bat_0.9.0_amd64.deb"
+    bin.install_symlink "/usr/bin/bat"
   end if OS.linux?
+
+  test do
+    pdf = test_fixtures("test.pdf")
+    output = shell_output("#{bin}/bat #{pdf} --color=never")
+    assert_match "Homebrew test", output
+  end
 end
