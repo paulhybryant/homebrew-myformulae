@@ -5,7 +5,9 @@ class Aria2Daemon < Formula
   depends_on "aria2"
 
   def install
-    share.install ".aria2.conf"
+    inreplace "aria2.conf", "\$dir", "${HOME}/Downloads"
+    inreplace "aria2.conf", "\$session", "#{share}/aria2.session"
+    share.install "aria2.conf"
   end
 
   plist_options :manual => "aria2-daemon"
@@ -21,7 +23,7 @@ class Aria2Daemon < Formula
       <array>
         <string>#{HOMEBREW_PREFIX}/bin/aria2c</string>
         <string>--conf-path</string>
-        <string>#{share}/.aria2.conf</string>
+        <string>#{share}/aria2.conf</string>
       </array>
       <key>KeepAlive</key>
       <true/>
