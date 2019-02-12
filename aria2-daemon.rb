@@ -2,8 +2,10 @@ class Aria2Daemon < Formula
   homepage "https://github.com/aria2/aria2"
   head "https://github.com/paulhybryant/aria2-daemon.git"
 
+  depends_on "aria2"
+
   def install
-    man.install ".aria2.conf"
+    share.install ".aria2.conf"
   end
 
   plist_options :manual => "aria2-daemon"
@@ -17,9 +19,9 @@ class Aria2Daemon < Formula
       <string>#{plist_name}</string>
       <key>ProgramArguments</key>
       <array>
-        <string>/usr/local/bin/aria2c</string>
+        <string>#{HOMEBREW_PREFIX}/bin/aria2c</string>
         <string>--conf-path</string>
-        <string>#{prefix}/share/man/.aria2.conf</string>
+        <string>#{share}/.aria2.conf</string>
       </array>
       <key>KeepAlive</key>
       <true/>
