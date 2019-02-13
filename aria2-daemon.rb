@@ -8,6 +8,7 @@ class Aria2Daemon < Formula
     inreplace "aria2.conf", "\$dir", "${HOME}/Downloads"
     inreplace "aria2.conf", "\$session", "#{share}/aria2.session"
     share.install "aria2.conf"
+    share.install "aria2.session"
   end
 
   plist_options :manual => "aria2-daemon"
