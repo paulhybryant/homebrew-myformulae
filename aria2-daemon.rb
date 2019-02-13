@@ -8,6 +8,11 @@ class Aria2Daemon < Formula
     inreplace "aria2.conf", "\$dir", "${HOME}/Downloads"
     pkgshare.install "aria2.conf"
     pkgshare.install "aria2.session"
+    if OS.linux?
+      inreplace "aria2.service", "\$bin", "#{HOMEBREW_PREFIX}/bin"
+      inreplace "aria2.service", "\$pkgshare", "#{HOMEBREW_PREFIX}/share/#{name}"
+      pkgshare.install "aria2.service"
+    end
   end
 
   if OS.mac?
@@ -33,6 +38,12 @@ class Aria2Daemon < Formula
         <true/>
       </dict>
       </plist>
+      EOS
+    end
+  else
+    def caveats; <<-EOS
+      Link #{HOMEBREW_PREFIX}/share/#{name}/aria2.service to /etc/systemd/system/
+      and enable it with systemctl.
       EOS
     end
   end
