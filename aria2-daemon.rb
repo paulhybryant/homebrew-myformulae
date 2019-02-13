@@ -24,6 +24,8 @@ class Aria2Daemon < Formula
         <string>#{HOMEBREW_PREFIX}/bin/aria2c</string>
         <string>--conf-path</string>
         <string>#{share}/aria2.conf</string>
+        <string>--input-file</string>
+        <string>#{share}/aria2.session</string>
       </array>
       <key>KeepAlive</key>
       <true/>
