@@ -6,9 +6,8 @@ class Aria2Daemon < Formula
 
   def install
     inreplace "aria2.conf", "\$dir", "${HOME}/Downloads"
-    inreplace "aria2.conf", "\$session", "#{opt_prefix}/aria2.session"
-    opt_prefix.install "aria2.conf"
-    opt_prefix.install "aria2.session"
+    pkgshare.install "aria2.conf"
+    pkgshare.install "aria2.session"
   end
 
   if OS.mac?
@@ -24,9 +23,11 @@ class Aria2Daemon < Formula
         <array>
           <string>#{HOMEBREW_PREFIX}/bin/aria2c</string>
           <string>--conf-path</string>
-          <string>#{opt_prefix}/aria2.conf</string>
+          <string>#{HOMEBREW_PREFIX}/share/#{name}/aria2.conf</string>
           <string>--input-file</string>
-          <string>#{opt_prefix}/aria2.session</string>
+          <string>#{HOMEBREW_PREFIX}/share/#{name}/aria2.session</string>
+          <string>--save-session</string>
+          <string>#{HOMEBREW_PREFIX}/share/#{name}/aria2.session</string>
         </array>
         <key>KeepAlive</key>
         <true/>
