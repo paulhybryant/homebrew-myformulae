@@ -11,6 +11,7 @@ class Aria2Daemon < Formula
     if OS.linux?
       inreplace "aria2.service", "\$bin", "#{HOMEBREW_PREFIX}/bin"
       inreplace "aria2.service", "\$pkgshare", "#{HOMEBREW_PREFIX}/share/#{name}"
+      inreplace "aria2.service", "\$user", "#{ENV["USER"]}"
       pkgshare.install "aria2.service"
     end
   end
