@@ -5,6 +5,7 @@ class Fsqlf < Formula
 
   if OS.linux?
     depends_on "patchelf" => :build
+    depends_on "flex" => :build
   end
 
   def install
