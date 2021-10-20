@@ -4,8 +4,6 @@ class Sshrc < Formula
   url "https://raw.githubusercontent.com/paulhybryant/dotfiles/master/misc/sshrc-0.6.2.tar.gz"
   sha256 "f3cc4a75b7905110d50db3deb11415851753a796e2c451c5dea2ee5a7f07fd33"
 
-  bottle :unneeded
-
   def install
     bin.install %w[sshrc moshrc]
   end
